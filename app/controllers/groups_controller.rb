@@ -1,5 +1,10 @@
 class GroupsController < ApplicationController
 
+
+  def show
+    @group = Group.find(params[:id])
+  end
+
   def index
     @groups = Group.all
   end
@@ -19,5 +24,5 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:title, :description)
   end
-  
+
 end
